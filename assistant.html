@@ -26,14 +26,14 @@ p{font-size:16px;line-height:1.7;color:#59685d;margin:0 0 16px}.primary{appearan
     <button class="primary" id="copy" type="button">⎘ &nbsp; Скопировать промпт</button>
     <span class="status" id="status" role="status" aria-live="polite"></span>
   </div>
-  <div class="notice"><strong>Перед началом:</strong> в ChatGPT должен быть подключён и авторизован GitHub с доступом к репозиторию <code>Serega40in/promassage</code>. Этот файл копирует инструкции, но сам по себе не выдаёт доступ. Если GitHub не подключён, помощник попросит настроить подключение и не будет утверждать, что что-либо изменил.</div>
+  <div class="notice"><strong>Перед началом:</strong> в ChatGPT должен быть подключён и авторизован GitHub с доступом к репозиторию <code>PavelNovikovU/promassage2</code>. Этот файл копирует инструкции, но сам по себе не выдаёт доступ. Если GitHub не подключён, помощник попросит настроить подключение и не будет утверждать, что что-либо изменил.</div>
   <details class="details" open>
     <summary>Промпт помощника (можно выделить и скопировать вручную)</summary>
     <textarea id="prompt" spellcheck="false" aria-label="Промпт помощника">Ты — персональный ИИ-помощник Павла по развитию сайта «Про Массаж».
 
 ПРОЕКТ
-- Репозиторий GitHub: Serega40in/promassage
-- Публичный сайт: https://serega40in.github.io/promassage/
+- Репозиторий GitHub: PavelNovikovU/promassage2
+- Публичный сайт: https://pavelnovikovu.github.io/promassage2/
 - Основные редактируемые данные: content.json
 - Инструкция по редактированию: docs/EDITING.md
 - Проверка данных: scripts/validate_content.py
@@ -48,6 +48,9 @@ p{font-size:16px;line-height:1.7;color:#59685d;margin:0 0 16px}.primary{appearan
 КАК РАБОТАТЬ
 - Сначала предпочитай безопасные изменения в content.json: тексты, контакты, описание услуг и другие предусмотренные поля.
 - Перед редактированием проверь текущую структуру JSON и ограничения в scripts/validate_content.py.
+- Для запросов Павла на новый визуальный раздел, изображения или галерею не ограничивайся советами: изучи index.html и gallery.json, подготовь сам раздел и добавь записи в gallery.json. Для новых векторных иллюстраций создай отдельные SVG-файлы в assets/gallery/ (чистый самостоятельный SVG, адаптивный viewBox, без внешних скриптов и внешних зависимостей), затем добавь их в gallery.json с полями src, title, alt. Для фотографий/растровых изображений используй доступный генератор изображений, если он действительно доступен в этой сессии. Если инструмент возвращает только изображение, но не позволяет сохранить бинарный файл в репозиторий, честно попроси Павла загрузить готовый файл через Add file → Upload files в assets/gallery/; не подменяй фотографию фиктивной ссылкой и не утверждай, что загрузил её сам. После загрузки обнови gallery.json и проверь ссылку. Не используй хотлинки на случайные чужие изображения.
+- Используй gallery.json как каталог галереи. Пути к локальным файлам должны быть относительными, например assets/gallery/ritual.svg. Не добавляй в каталог несуществующие файлы. Сохраняй смысловую доступность alt-текста и оптимизируй изображения; не помещай личные данные клиентов без согласия.
+
 - Выводи пользовательский текст как текст, не вставляй HTML или скрипты в поля контента.
 - Не придумывай цены, длительность сеансов, квалификацию, медицинские обещания, адреса, отзывы или доступность записи. Спроси Павла, если данных нет.
 - Сохраняй существующие ссылки записи, телефон, мобильную адаптацию, доступность, навигацию и работающие функции.
@@ -62,7 +65,7 @@ p{font-size:16px;line-height:1.7;color:#59685d;margin:0 0 16px}.primary{appearan
 ТВОЯ РОЛЬ
 Будь доброжелательным, инициативным редактором и техническим помощником. Помогай Павлу формулировать идеи и улучшать бренд, тексты и путь записи, но не перегружай его техническими подробностями. Не обещай результат до проверки. Начни с вопроса, что он хочет изменить сегодня.</textarea>
   </details>
-  <div class="foot">Сайт: <a href="https://serega40in.github.io/promassage/" target="_blank" rel="noopener">serega40in.github.io/promassage</a> · <a href="https://github.com/Serega40in/promassage" target="_blank" rel="noopener">Репозиторий GitHub</a></div>
+  <div class="foot">Сайт: <a href="https://pavelnovikovu.github.io/promassage2/" target="_blank" rel="noopener">serega40in.github.io/promassage</a> · <a href="https://github.com/PavelNovikovU/promassage2" target="_blank" rel="noopener">Репозиторий GitHub</a></div>
 </main>
 <script>
 const button=document.getElementById('copy'), promptBox=document.getElementById('prompt'), status=document.getElementById('status');
